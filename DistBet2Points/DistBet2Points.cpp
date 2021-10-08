@@ -1,32 +1,20 @@
-﻿// 02.10.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// DistBet2Points.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #define _USE_MATH_DEFINES
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    //int a;
-    //cin >> a;
-    //cout << a * -1 << "\n";
-
-    //double x;
-    //cin >> x;
-    //cout << (2 * x + 10) / 3;
-
-    //int b;
-    //cin >> b;
-    //cout << b % 10 + b / 10 << endl;
-
-    //int c;
-    //cin >> c;
-    //cout << abs(c);
-
-    int d;
-    cin >> d;
-    cout << M_PI * pow(d, 2);
+    cout << "Enter x1 and y1: " << endl;
+    int x1, y1;
+    cin >> x1 >> y1;
+    cout << "Enter x2 and y2: " << endl;
+    int x2, y2;
+    cin >> x2 >> y2;
+    int d = sqrt(pow(x1 - y2, 2) + pow(y2 - y1, 2));
+    cout << "Distance between two points is " << d;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

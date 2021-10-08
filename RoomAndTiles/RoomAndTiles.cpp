@@ -1,32 +1,19 @@
-﻿// 02.10.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// RoomAndTiles.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#define _USE_MATH_DEFINES
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    //int a;
-    //cin >> a;
-    //cout << a * -1 << "\n";
-
-    //double x;
-    //cin >> x;
-    //cout << (2 * x + 10) / 3;
-
-    //int b;
-    //cin >> b;
-    //cout << b % 10 + b / 10 << endl;
-
-    //int c;
-    //cin >> c;
-    //cout << abs(c);
-
-    int d;
-    cin >> d;
-    cout << M_PI * pow(d, 2);
+    cout << "Enter size of room(width and length): " << endl;
+    int m, n;
+    cin >> m >> n;
+    cout << "Enter size of tile(tile  square, so enter only one side): " << endl;
+    int x;
+    cin >> x;
+    int c = (m * n) / pow(x, 2);
+    cout << "Count of tiles is " << c;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

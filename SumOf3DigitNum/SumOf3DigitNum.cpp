@@ -1,32 +1,16 @@
-﻿// 02.10.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// SumOf3DigitNum.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#define _USE_MATH_DEFINES
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    //int a;
-    //cin >> a;
-    //cout << a * -1 << "\n";
-
-    //double x;
-    //cin >> x;
-    //cout << (2 * x + 10) / 3;
-
-    //int b;
-    //cin >> b;
-    //cout << b % 10 + b / 10 << endl;
-
-    //int c;
-    //cin >> c;
-    //cout << abs(c);
-
-    int d;
-    cin >> d;
-    cout << M_PI * pow(d, 2);
+    cout << "Enter 3-digit number:" << endl;
+    int n;
+    cin >> n;
+    int a = n % 10 + n / 10 % 10 + n / 100;
+    cout << a;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
