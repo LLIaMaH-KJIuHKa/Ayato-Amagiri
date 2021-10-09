@@ -1,4 +1,4 @@
-﻿// RoomAndTiles.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// 10.10.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
@@ -6,16 +6,25 @@ using namespace std;
 
 int main()
 {
-    int m, n;
-    cout << "Enter size of room(width and length): " << endl;
-    cin >> m >> n;
+	//int area, width;
+	//cin >> area >> width;
+	//int areahundred = area * 100;
+	//
+	//int legth = areahundred / width;
+	//int perimetr = (width + legth) * 2;
+	//
+	//cout << "Length of fence is " << perimetr;
 
-    int x;
-    cout << "Enter size of tile(tile  square, so enter only one side): " << endl;
-    cin >> x;
+	//int n;
+	//cin >> n;
+	//int egg = n * (n / 1.5);
+	//cout << egg;
 
-    int c = (m * n) / pow(x, 2);
-    cout << "Count of tiles is " << c;
+	int n, r;
+	cin >> n >> r;
+	int kilobite = n * 1024;
+	int mistakes = kilobite + r * 2;
+	cout << mistakes;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
