@@ -13,7 +13,7 @@ int main()
     cout << "Enter x2 and y2: " << endl;
     int x2, y2;
     cin >> x2 >> y2;
-    int d = sqrt(pow(x1 - y2, 2) + pow(y2 - y1, 2));
+    int d = sqrt(pow(x1 - x2, 2) + pow(y2 - y1, 2));
     cout << "Distance between two points is " << d;
 }
 
