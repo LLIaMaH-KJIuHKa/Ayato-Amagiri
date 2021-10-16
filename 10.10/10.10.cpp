@@ -23,8 +23,8 @@ int main()
 	int n, r;
 	cin >> n >> r;
 	int kilobite = n * 1024;
-	int mistakes = kilobite + r * 2;
-	cout << mistakes;
+	int pressing = kilobite + r * 2;
+	cout << pressing;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
