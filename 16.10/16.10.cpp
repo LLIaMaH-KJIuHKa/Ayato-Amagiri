@@ -1,4 +1,4 @@
-﻿// Discriminant.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// 16.10.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #define _USE_MATH_DEFINES
@@ -8,16 +8,93 @@ using namespace std;
 
 int main()
 {
-    double a, b, c;
-    cout << "Enter a, b, c of quadratic equation: " << endl;
-    cin >> a >> b >> c;
+	/*double x;
+	cin >> x;
+	printf("%.2f", x);*/
 
-    double d = pow(b, 2) - (4 * a * c);
-    double x1 = (-b - sqrt(d)) / (2 * a);
-    double x2 = (-b + sqrt(d)) / (2 * a);
 
-    cout << "x1 = " << x1 << endl;
-    cout << "x2 = " << x2;
+	/*int i = 16;
+	bool a = false;
+	if (i % 3 == 0)
+	{
+		cout << "3" << endl;
+		a = true;
+	}
+	
+	if (i % 5 == 0)
+	{
+		cout << "5" << endl;
+		a = true;
+	}
+	
+	if (a == false)
+	{
+		cout << "No";
+	}*/
+
+	
+	/*int a, b, c;
+	cin >> a >> b >> c;
+	if (a > b && a > c)
+	{
+		cout << a;
+	}
+	
+	else if (b > c)
+	{
+		cout << b;
+	}
+	
+	else
+	{
+		cout << c;
+	}*/
+
+
+	/*double a, b, c, d, e;
+	cin >> a >> b >> c >> d >> e;
+	double sum = 0;
+	if (a >= 0)
+	{
+		sum += a;
+	}
+
+	if (b >= 0)
+	{
+		sum += b;
+	}
+
+	if (c >= 0)
+	{
+		sum += c;
+	}
+
+	if (d >= 0)
+	{
+		sum += d;
+	}
+
+	if (e >= 0)
+	{
+		sum += e;
+	}
+
+	cout << sum;*/
+
+	/*int a;
+	cin >> a;
+	for (int i = 0; i < a; i++)
+	{
+		cout << "=";
+	}*/
+
+	for (int i = 0; i < 100; i++)
+	{
+		if (i % 3 == 0 && i % 7 == 0)
+		{
+			cout << i << endl;
+		}
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

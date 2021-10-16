@@ -6,25 +6,27 @@ using namespace std;
 
 int main()
 {
-	//int area, width;
-	//cin >> area >> width;
-	//int areahundred = area * 100;
-	//
-	//int legth = areahundred / width;
-	//int perimetr = (width + legth) * 2;
-	//
-	//cout << "Length of fence is " << perimetr;
+	/*int area, width;
+	cin >> area >> width;
+	int areahundred = area * 100;
+	
+	int legth = areahundred / width;
+	int perimetr = (width + legth) * 2;
+	
+	cout << "Length of fence is " << perimetr;*/
 
-	//int n;
-	//cin >> n;
-	//int egg = n * (n / 1.5);
-	//cout << egg;
 
-	int n, r;
+	/*int n;
+	cin >> n;
+	int egg = n * (n / 1.5);
+	cout << egg;*/
+
+
+	/*int n, r;
 	cin >> n >> r;
 	int kilobite = n * 1024;
 	int pressing = kilobite + r * 2;
-	cout << pressing;
+	cout << pressing;*/
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
