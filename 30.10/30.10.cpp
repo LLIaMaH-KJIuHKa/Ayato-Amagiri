@@ -1,11 +1,93 @@
-﻿// CaclFormula4.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// 30.10.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
+#define _USE_MATH_DEFINES
 #include <iostream>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	/*int a, n;
+    cin >> a >> n;
+
+	int res = 1;
+	for (int i = 1; i <= n; i++)
+	{
+		res *= a;
+	}
+	cout << res;*/
+
+
+	/*int n;
+	cin >> n;
+
+	int maxDivisor = 0;
+	for (int i = 1; i < n; i++)
+	{
+		if (n % i == 0)
+		{
+			maxDivisor = i;
+		}
+	}
+
+	if (maxDivisor == 1)
+	{
+		cout << "YES";
+	}
+	else
+	{
+		cout << "NO";
+	}*/
+
+
+	/*int count = 0;
+
+	for (int i = 5; i < 95; i += 5)
+	{
+		count += i;
+	}
+
+	cout << count;*/
+
+
+    /*int a;
+	cin >> a;
+	
+	int factorial = 1;
+	for (int i = 2; i <= a; i++)
+	{
+		factorial *= i;
+	}
+	
+	cout << factorial;*/
+
+
+	/*int a;
+	cin >> a;
+
+	int factorial = 1;
+	long sum = 0;
+	for (int i = 1; i <= a; i++)
+	{
+		factorial *= i;
+		sum += factorial;
+	}
+
+	cout << sum;*/
+
+
+	int a;
+	cin >> a;
+
+	int count = 0;
+	while (a != 0)
+	{
+		count++;
+		a /= 10;
+	}
+
+	cout << count;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

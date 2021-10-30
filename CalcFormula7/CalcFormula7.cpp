@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter side of equilateral triangle: " << endl;
-    int a;
+    double a;
     cin >> a;
-    int s = pow(a, 2) * sqrt(3) / 2;
+    double s = pow(a, 2) * sqrt(3) / 2;
     cout << "Equilateral triangle area is " << s;
 }
 

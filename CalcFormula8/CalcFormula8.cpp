@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter inscribed circle radius and semi-perimeter: " << endl;
-    int r, p;
+    double r, p;
     cin >> r >> p;
-    int s = r * p;
+    double s = r * p;
     cout << "Triangle area is " << s;
 }
 

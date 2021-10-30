@@ -81,12 +81,14 @@ int main()
 
 	cout << sum;*/
 
+
 	/*int a;
 	cin >> a;
 	for (int i = 0; i < a; i++)
 	{
 		cout << "=";
 	}*/
+
 
 	for (int i = 0; i <= 100; i++)
 	{

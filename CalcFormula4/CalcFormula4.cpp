@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter radius: " << endl;
-    int radius;
+    double radius;
     cin >> radius;
-    int l = 2 * M_PI * radius;
+    double l = 2 * M_PI * radius;
     cout << "Circumference is " << l;
 }
 

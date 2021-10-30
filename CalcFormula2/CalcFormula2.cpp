@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter s0 and h: " << endl;
-    int s0, h;
+    double s0, h;
     cin >> s0 >> h;
-    int v = s0 * h / 3;
+    double v = s0 * h / 3;
     cout << "Pyramid volume is " << v;
 }
 

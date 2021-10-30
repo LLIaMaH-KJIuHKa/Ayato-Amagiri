@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter side and acute angle: " << endl;
-    int side, angle;
+    double side, angle;
     cin >> side >> angle;
-    int s = pow(side, 2) * sin(angle);
+    double s = pow(side, 2) * sin(angle);
     cout << "Rhombus area is " << s;
 }
 

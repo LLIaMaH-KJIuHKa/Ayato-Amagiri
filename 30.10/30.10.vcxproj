@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7e93b153-6793-442a-9c1e-8f3e8257f12f}</ProjectGuid>
-    <RootNamespace>CaclFormula4</RootNamespace>
+    <ProjectGuid>{a1ba7e49-d842-4de4-b17d-e1fe340b80b7}</ProjectGuid>
+    <RootNamespace>My3010</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CaclFormula4.cpp" />
+    <ClCompile Include="30.10.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

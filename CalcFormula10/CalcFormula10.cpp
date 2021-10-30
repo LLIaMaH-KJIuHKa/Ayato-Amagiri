@@ -9,10 +9,10 @@ using namespace std;
 int main()
 {
     cout << "Enter three sides: " << endl;
-    int a, b, c;
+    double a, b, c;
     cin >> a >> b >> c;
-    int p = (a + b + c) / 2;
-    int s = sqrt(p * (p - a) * (p - b) * (p - c));
+    double p = (a + b + c) / 2;
+    double s = sqrt(p * (p - a) * (p - b) * (p - c));
     cout << "Triangle area is " << s;
 }
 
