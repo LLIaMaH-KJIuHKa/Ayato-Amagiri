@@ -17,7 +17,7 @@ int main()
 		{
 			divisor = i;
 		}
-	};
+	}
 	cout << divisor;
 }
 

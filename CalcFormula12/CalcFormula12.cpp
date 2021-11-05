@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter side and height: " << endl;
-    int a, h;
+    double a, h;
     cin >> a >> h;
-    int s = a * h / 2;
+    double s = a * h / 2;
     cout << "Triangle area is " << s;
 }
 

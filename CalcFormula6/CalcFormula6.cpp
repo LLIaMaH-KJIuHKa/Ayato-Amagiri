@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter two diagonals: " << endl;
-    int d1, d2;
+    double d1, d2;
     cin >> d1 >> d2;
-    int s = d1 * d2 / 2;
+    double s = d1 * d2 / 2;
     cout << "Rhombus area is " << s;
 }
 

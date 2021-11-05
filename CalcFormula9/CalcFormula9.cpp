@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter three sides and circumscribed circle radius: " << endl;
-    int a, b, c, r;
+    double a, b, c, r;
     cin >> a >> b >> c >> r;
-    int s = (a * b * c) / 4 * r;
+    double s = (a * b * c) / 4 * r;
     cout << "Triangle area is " << s;
 }
 

@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     cout << "Enter radius: " << endl;
-    int radius;
+    double radius;
     cin >> radius;
-    int s = M_PI * pow(radius, 2);
+    double s = M_PI * pow(radius, 2);
     cout << "Circle area is " << s;
 }
 
