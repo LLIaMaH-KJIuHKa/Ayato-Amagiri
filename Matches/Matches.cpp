@@ -1,34 +1,59 @@
-﻿// RandomNNumbers.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Matches.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include <ctime>
 #include <iostream>
+#include "Matches.h"
 
 using namespace std;
 
 int main()
 {
-	srand(time(NULL));
+	int matchesCount = 20;
+	int currentPlayer = 2;
 
-	cout << "Enter a, b, n: " << endl;
-	int a, b, n;
-	cin >> a >> b >> n;
-	int sum = 0;
-	int amount = 0;
-
-	do
+	while (matchesCount > 0)
 	{
-		int r = rand() % (b - a + 1) + a;
-		cout << r << " ";
-		if (r % 2 == 0)
+		ChangeCurrentPlayer(currentPlayer);
+
+		DrawMatches(matchesCount);
+
+		int move = PlayerMove(currentPlayer, matchesCount);
+
+		matchesCount -= move;
+	}
+	cout << "Player " << currentPlayer << " won";
+}
+
+int ChangeCurrentPlayer(int currentPlayer)
+{
+	return 3 - currentPlayer;
+}
+
+int PlayerMove(int currentPlayer, int matchesCount)
+{
+	int move;
+	while (true)
+	{
+		cout << "Player " << currentPlayer << ". Do your move: " << endl;
+		cin >> move;
+
+		if (move >= 1 && move <= 3 && move <= matchesCount)
 		{
-			sum += r;
+			break;
 		}
-		amount++;
-	} while (amount < n);
 
-	cout << "\n" << sum;
+		cout << "Invalid move" << endl;
+	}
+	return move;
+}
 
+void DrawMatches(int matchesCount)
+{
+	for (int i = 1; i <= matchesCount; i++)
+	{
+		cout << "|";
+	}
+	cout << endl;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

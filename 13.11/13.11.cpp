@@ -1,34 +1,36 @@
-﻿// RandomNNumbers.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// 13.11.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-
-#include <ctime>
+#define USE_MATH_DEFINES
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 
 int main()
 {
+	setlocale(LC_ALL, "ru");
 	srand(time(NULL));
 
-	cout << "Enter a, b, n: " << endl;
-	int a, b, n;
-	cin >> a >> b >> n;
-	int sum = 0;
-	int amount = 0;
+	int n = rand() % (100 + 1);
+	int a = 0;
 
 	do
 	{
-		int r = rand() % (b - a + 1) + a;
-		cout << r << " ";
-		if (r % 2 == 0)
+		cin >> a;
+		if (a < n)
 		{
-			sum += r;
+			cout << "Больше" << endl;
 		}
-		amount++;
-	} while (amount < n);
-
-	cout << "\n" << sum;
-
+		else if (a > n)
+		{
+			cout << "Меньше" << endl;
+		}
+		else if (a == n)
+		{
+			cout << "Лови тяночку" << endl;
+			break;
+		}
+	} while (true);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
