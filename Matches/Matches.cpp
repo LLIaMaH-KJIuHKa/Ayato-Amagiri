@@ -8,12 +8,13 @@ using namespace std;
 
 int main()
 {
+	srand(time(NULL));
 	int matchesCount = 20;
 	int currentPlayer = 2;
 
 	while (matchesCount > 0)
 	{
-		ChangeCurrentPlayer(currentPlayer);
+		currentPlayer = ChangeCurrentPlayer(currentPlayer);
 
 		DrawMatches(matchesCount);
 
@@ -21,12 +22,26 @@ int main()
 
 		matchesCount -= move;
 	}
-	cout << "Player " << currentPlayer << " won";
+	if (currentPlayer == 1)
+	{
+		cout << "Computer won";
+	}
+	else
+	{
+		cout << "Human won";
+	}
 }
 
 int ChangeCurrentPlayer(int currentPlayer)
 {
-	return 3 - currentPlayer;
+	if (currentPlayer == 1)
+	{
+		return 2;
+	}
+	if (currentPlayer == 2)
+	{
+		return 1;
+	}
 }
 
 int PlayerMove(int currentPlayer, int matchesCount)
@@ -34,15 +49,64 @@ int PlayerMove(int currentPlayer, int matchesCount)
 	int move;
 	while (true)
 	{
-		cout << "Player " << currentPlayer << ". Do your move: " << endl;
-		cin >> move;
-
-		if (move >= 1 && move <= 3 && move <= matchesCount)
+		if (currentPlayer == 1)
 		{
-			break;
+			cout << "Computer's move: " << endl;
+			if (matchesCount % 5 == 0)
+			{
+				move = 1;
+				cout << move << endl;
+				break;
+			}
+			else if (matchesCount == 6 || matchesCount == 11 || matchesCount == 16)
+			{
+				move = 2;
+				cout << move << endl;
+				break;
+			}
+			else if (matchesCount == 7 || matchesCount == 12 || matchesCount == 17)
+			{
+				move = 3;
+				cout << move << endl;
+				break;
+			}
+			else if (matchesCount == 3)
+			{
+				move = 3;
+				cout << move << endl;
+				break;
+			}
+			else if (matchesCount == 2)
+			{
+				move = 2;
+				cout << move << endl;
+				break;
+			}
+			else if (matchesCount == 1)
+			{
+				move = 1;
+				cout << move << endl;
+				break;
+			}
+			else
+			{
+				move = rand() % (3 - 1) + 1;
+				cout << move << endl;
+				break;
+			}
 		}
+		else
+		{
+			cout << "Player " << currentPlayer << ". Do your move: " << endl;
+			cin >> move;
 
-		cout << "Invalid move" << endl;
+			if (move >= 1 && move <= 3 && move <= matchesCount)
+			{
+				break;
+			}
+
+			cout << "Invalid move" << endl;
+		}
 	}
 	return move;
 }
