@@ -1,23 +1,47 @@
-﻿// SumOfTwoNums.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// 20.11.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
-
 #include <iostream>
-#include "SumOfTwoNums.h"
+#include <fstream>
 
 using namespace std;
 
 int main()
 {
-    int a, b;
-    cin >> a >> b;
-    int c = Sum(a, b);
-    cout << c;
-}
+	/*int a;
+	ifstream input("input.txt");
+	input >> a;
 
-int Sum(int a, int b)
-{
-    int c = a + b;
-    return c;
+
+	ofstream output("output.txt");
+	output << a;*/
+
+	/*int k, n, w;
+	cin >> k >> n >> w;
+	int dollars = 0;
+
+	for (int i = 1; i <= w; i++)
+	{
+		dollars += i * k;
+	}
+
+	cout << max(0, dollars - n);*/
+
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		string s;
+		cin >> s;
+		int l = s.length();
+		if (l > 10)
+		{
+			cout << s[0] << l - 2 << s[l - 1] << endl;
+		}
+		else
+		{
+			cout << s << endl;
+		}
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

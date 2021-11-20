@@ -10,7 +10,7 @@ int main()
 {
 	srand(time(NULL));
 	int matchesCount = 20;
-	int currentPlayer = 2;
+	int currentPlayer = 1;
 
 	while (matchesCount > 0)
 	{
@@ -38,7 +38,7 @@ int ChangeCurrentPlayer(int currentPlayer)
 	{
 		return 2;
 	}
-	if (currentPlayer == 2)
+	else
 	{
 		return 1;
 	}
@@ -55,49 +55,37 @@ int PlayerMove(int currentPlayer, int matchesCount)
 			if (matchesCount % 5 == 0)
 			{
 				move = 1;
-				cout << move << endl;
-				break;
 			}
-			else if (matchesCount == 6 || matchesCount == 11 || matchesCount == 16)
+			else if (matchesCount == 6)
 			{
 				move = 2;
-				cout << move << endl;
-				break;
 			}
-			else if (matchesCount == 7 || matchesCount == 12 || matchesCount == 17)
+			else if (matchesCount == 7)
 			{
 				move = 3;
-				cout << move << endl;
-				break;
 			}
 			else if (matchesCount == 3)
 			{
 				move = 3;
-				cout << move << endl;
-				break;
 			}
 			else if (matchesCount == 2)
 			{
 				move = 2;
-				cout << move << endl;
-				break;
 			}
 			else if (matchesCount == 1)
 			{
-				move = 1;
-				cout << move << endl;
-				break;
+				move = 1; 
 			}
 			else
 			{
 				move = rand() % (3 - 1) + 1;
-				cout << move << endl;
-				break;
 			}
+			cout << move << endl;
+			break;
 		}
 		else
 		{
-			cout << "Player " << currentPlayer << ". Do your move: " << endl;
+			cout << "Human. Do your move: " << endl;
 			cin >> move;
 
 			if (move >= 1 && move <= 3 && move <= matchesCount)
