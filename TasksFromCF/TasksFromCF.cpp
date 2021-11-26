@@ -1,8 +1,9 @@
-﻿// 20.11.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// TasksFromCF.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
+
 #include <iostream>
 #include <fstream>
-#include "20.11.h"
+#include "TasksFromCF.h"
 
 using namespace std;
 
@@ -15,7 +16,91 @@ int main()
 	ofstream output("output.txt");
 	output << a;*/
 
-	Bit();
+	StonesOnTheTable();
+}
+
+void StonesOnTheTable()
+{
+	int n;
+	cin >> n;
+	string s;
+	cin >> s;
+	int positions = 0;
+
+	if (s[positions] != s[positions + 1])
+	{
+		cout << positions;
+	}
+	else
+	{
+		do
+		{
+			positions++;
+		} while (s[positions] == s[positions + 1]);
+		cout << positions;
+	}
+}
+
+void BearAndElderBrother()
+{
+	int a, b;
+	cin >> a >> b;
+	int years = 0;
+
+	while (true)
+	{
+		if (a > b)
+		{
+			cout << years;
+			break;
+		}
+		else
+		{
+			years++;
+			a *= 3;
+			b *= 2;
+		}
+	}
+}
+
+void Team()
+{
+	int n;
+	cin >> n;
+	int tasksCount = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		int a, b, c;
+		cin >> a >> b >> c;
+		if (a + b + c >= 2)
+		{
+			tasksCount++;
+		}
+	}
+
+	cout << tasksCount;
+}
+
+void BeautifulYear()
+{
+	int y;
+	cin >> y;
+
+	while (true)
+	{
+		y++;
+		int a = y % 10;
+		int b = y / 10 % 10;
+		int c = y / 100 % 10;
+		int d = y / 1000;
+
+		if (a != b && a != c && a != d && b != c && b != d && c != d)
+		{
+			cout << y;
+			break;
+		}
+	}
 }
 
 void Bit()
@@ -23,6 +108,7 @@ void Bit()
 	int n;
 	int x = 0;
 	cin >> n;
+
 	for (int i = 0; i < n; i++)
 	{
 		string function;
@@ -41,6 +127,7 @@ void Bit()
 			n++;
 		}
 	}
+
 	cout << x;
 }
 
@@ -48,6 +135,7 @@ void Watermelon()
 {
 	int n;
 	cin >> n;
+
 	if (n % 2 == 0 && n / 2 != 1)
 	{
 		cout << "YES";
@@ -62,11 +150,13 @@ void TooLongWords()
 {
 	int n;
 	cin >> n;
+
 	for (int i = 0; i < n; i++)
 	{
 		string s;
 		cin >> s;
 		int l = s.length();
+
 		if (l > 10)
 		{
 			cout << s[0] << l - 2 << s[l - 1] << endl;
