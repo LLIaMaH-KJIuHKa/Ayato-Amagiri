@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "TasksFromCF.h"
+//#include "TasksFromCF.h"
 
 using namespace std;
 
@@ -27,18 +27,15 @@ void StonesOnTheTable()
 	cin >> s;
 	int positions = 0;
 
-	if (s[positions] != s[positions + 1])
+	for (int i = 0; i < n; i++)
 	{
-		cout << positions;
-	}
-	else
-	{
-		do
+		if (s[positions] == s[positions + 1])
 		{
 			positions++;
-		} while (s[positions] == s[positions + 1]);
-		cout << positions;
+		}
 	}
+
+	cout << positions;
 }
 
 void BearAndElderBrother()
