@@ -13,30 +13,30 @@ int main()
 	SetConsoleOutputCP(1251);
 	string s;
 	getline(cin, s);
-	string word, check;
-	int length = 0, max = 0;
+	string maxWord, currentWord;
+	int maxLength = 0, currentLength = 0;
 	
 	for (int i = 0; i < s.length(); i++)
 	{
 		if (s[i] >= 'a' && s[i] <= 'z' || s[i] >= 'A' && s[i] <= 'Z' ||
-			s[i] >= 'а' && s[i] <= 'я' || s[i] >= 'А' && s[i] <= 'Я')
+			s[i] >= 'а' && s[i] <= 'я' || s[i] >= 'А' && s[i] <= 'Я' || s[i] == 'Ё'|| s[i] == 'ё')
 		{
-			check += s[i];
-			length++;
+			currentWord += s[i];
+			currentLength++;
+			if (currentLength > maxLength)
+			{
+				maxWord = currentWord;
+				maxLength = currentLength;
+			}
 		}
 		else
 		{
-			if (length > max)
-			{
-				word = check;
-				max = length;
-			}
-			check = "";
-			length = 0;
+			currentWord = "";
+			currentLength = 0;
 		}
 	}
 
-	cout << word;
+	cout << maxWord;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

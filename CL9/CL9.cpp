@@ -1,49 +1,99 @@
-﻿// WordNoRepeats.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// CL9.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-
 #include <iostream>
+#include <cmath>
 #include <string>
 #include <Windows.h>
+#include "CL9.h"
 
 using namespace std;
 
 int main()
 {
+	Task4();
+}
+void Task4()
+{
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	string s;
 	getline(cin, s);
-	int length = 0, max = 0;
-	bool b;
-
-	for (int i = 0; i <= s.length(); i++)
+	int point = s.find(".");
+	int space = s.find(" ");
+	cout << s.substr(0, space);
+	for (int i = 0; i < s.find_first_of(" "); i++)
 	{
-		if (s[i] >= 'a' && s[i] <= 'z' || s[i] >= 'A' && s[i] <= 'Z' ||
-			s[i] >= 'а' && s[i] <= 'я' || s[i] >= 'А' && s[i] <= 'Я')
-		{
-			b = true;
-			for (int j = 1; j <= i; j++)
-			{
-				if (s[i] == s[i - j])
-				{
-					b = false;
-					break;
-				}
-			}
-			length++;
-		}
-		else
-		{
-			if (b == true && length > max)
-			{
-				max = length;
-			}
-			length = 0;
-		}
+		cout << s.substr(point, space);
+	}
+}
+void Task3()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	string s;
+	getline(cin, s);
+	int space = s.find_first_of(" ");
+
+	cout << s.substr(0, space);
+	cout << " " << s[space + 1] << ".";
+	cout << " " << s[s.find_last_of(" ") + 1] << ".";
+}
+
+
+void Task2()
+{
+	int m, d, days;
+	cin >> m >> d;
+
+	switch (m)
+	{
+	case 2:
+		days = 28;
+		break;
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		days = 31; ;
+		break;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		days = 30;
+		break;
+
 	}
 
-	cout << max;
+	cout << ceil((days + d - 1) / 7.0);
+}
+
+void Task1()
+{
+	int n;
+	cin >> n;
+
+	switch (n)
+	{
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+		cout << "Weekday";
+		break;
+	case 6:
+	case 7:
+		cout << "Weekend";
+		break;
+	default:
+		cout << "?";
+		break;
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
