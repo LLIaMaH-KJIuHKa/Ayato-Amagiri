@@ -11,6 +11,17 @@ using namespace std;
 
 int main()
 {
+	/* Aaaa Bbbb Cccc
+	// Aaaa B. C.
+
+	string s = "abc ded d";
+
+	cout << s.find_first_of('d') << endl; // 4
+	cout << s.find_first_of('d', 5) << endl; // 6
+	cout << s.find_last_of('d') << endl; // 8
+	cout << s.find_last_of('z') << endl; // unsigned int max
+
+	cout << s.substr(4, 3) << endl; // ded*/
 	Task4();
 }
 void Task4()
@@ -19,12 +30,12 @@ void Task4()
 	SetConsoleOutputCP(1251);
 	string s;
 	getline(cin, s);
-	int point = s.find(".");
-	int space = s.find(" ");
-	cout << s.substr(0, space);
-	for (int i = 0; i < s.find_first_of(" "); i++)
+	for (int i = 0; i < s.size(); i++)
 	{
-		cout << s.substr(point, space);
+		if (s[i] == '.')
+		{
+			cout << s.substr(s.find_first_of('.', s.find_first_of(' ') - s.find_first_of('.')), i + 2);
+		}
 	}
 }
 void Task3()
