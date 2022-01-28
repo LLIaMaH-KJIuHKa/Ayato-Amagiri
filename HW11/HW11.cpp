@@ -1,30 +1,84 @@
-﻿// CL11.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// HW11.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
+#include <string>
+#include <fstream>
+#include "HW11.h"
 
 using namespace std;
 
 int main()
 {
-	string a;
-	cin >> a;
-	bool isPalindrom = true;
-	for (int i = 0; i < a.length() / 2; ++i)
+	
+}
+
+void AmountOfPalindroms()
+{
+	ifstream input("input.txt");
+	string s;
+	getline(input, s);
+	int first = 0, count = 0;
+	for (int i = 0; i < s.length(); i++)
 	{
-		if (a[i] != a[a.length() - i - 1])
+		if (s[i] == ' ')
 		{
-			isPalindrom = false;
+			string a = s.substr(first, i - first);
+			bool isPalindrom = true;
+			for (int j = 0; j < a.length() / 2; ++j)
+			{
+				if (a[j] != a[a.length() - j - 1])
+				{
+					isPalindrom = false;
+				}
+			}
+			if (isPalindrom = true)
+			{
+				count++;
+			}
 		}
 	}
 
-	if (isPalindrom == true)
+	ofstream output("output.txt");
+	output << count;
+}
+
+void ChangeThirdElement()
+{
+	const int amount = 10;
+	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	for (int i = 0; i < amount; i++)
 	{
-		cout << "YES";
+		cout << arr[i] << " ";
 	}
-	else
+	cout << endl;
+
+	int n;
+	cin >> n;
+	*(arr + 2) = n;
+
+	for (int i = 0; i < amount; i++)
 	{
-		cout << "NO";
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+
+void ArrayViceVersa()
+{
+	const int amount = 10;
+	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	for (int i = 0; i < amount; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+
+	for (int i = amount - 1; i >= 0; i--)
+	{
+		cout << arr[i] << " ";
 	}
 }
 
