@@ -4,35 +4,55 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "HW11.h"
+//#include "HW11.h"
 
 using namespace std;
 
 int main()
 {
-	
+	const int amount = 10;
+	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	for (int i = 0; i < amount; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+	cout << arr[amount - 1] << " ";
+	for (int i = -1; i < amount - 2; i++)
+	{
+		int n = arr[i + 1];
+		cout << n << " ";
+	}
 }
 
 void AmountOfPalindroms()
 {
 	ifstream input("input.txt");
-	string s;
+	string s, word;
 	getline(input, s);
 	int first = 0, count = 0;
 	for (int i = 0; i < s.length(); i++)
 	{
-		if (s[i] == ' ')
+		while (s[i] >= 'a' && s[i] <= 'z' || s[i] >= 'A' && s[i] <= 'Z' || s[i] >= '0' && s[i] <= '9')
 		{
-			string a = s.substr(first, i - first);
+			word += s[i];
+			i++;
+		}
+
+		if (word != "")
+		{
 			bool isPalindrom = true;
-			for (int j = 0; j < a.length() / 2; ++j)
+			for (int j = 0; j < s.length() / 2; ++j)
 			{
-				if (a[j] != a[a.length() - j - 1])
+				if (s[j] != s[s.length() - j - 1])
 				{
 					isPalindrom = false;
+					break;
 				}
 			}
-			if (isPalindrom = true)
+
+			if (isPalindrom)
 			{
 				count++;
 			}
