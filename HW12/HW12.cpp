@@ -1,93 +1,40 @@
-﻿// HW11.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// HW12.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include <string>
-#include <fstream>
-#include "HW11.h"
+#include <ctime>
 
 using namespace std;
 
 int main()
 {
-	AmountOfPalindroms();
-}
+    srand(time(NULL));
+    const int times = 10;
+    int arr[times];
+    int n, count = 0, amount = 0;
+    cin >> n;
 
-void AmountOfPalindroms()
-{
-	ifstream input("input.txt");
-	string s, word;
-	getline(input, s);
-	int count = 0;
-	for (int i = 0; i < s.length(); i++)
-	{
-		while (s[i] >= 'a' && s[i] <= 'z' || s[i] >= 'A' && s[i] <= 'Z' || s[i] >= '0' && s[i] <= '9')
-		{
-			word += s[i];
-			i++;
-		}
+    for (int i = 0; i < times; i++)
+    {
+        arr[i] = rand() % (n + 1);
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    cout << endl;
 
-		if (word != "")
-		{
-			bool isPalindrom = true;
-			for (int j = 0; j < word.length() / 2; ++j)
-			{
-				if (word[j] != word[word.length() - j - 1])
-				{
-					isPalindrom = false;
-					break;
-				}
-			}
-
-			if (isPalindrom)
-			{
-				count++;
-			}
-			word = "";
-		}
-	}
-
-	ofstream output("output.txt");
-	output << count;
-}
-
-void ChangeThirdElement()
-{
-	const int amount = 10;
-	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-	for (int i = 0; i < amount; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << endl;
-
-	int n;
-	cin >> n;
-	*(arr + 2) = n;
-
-	for (int i = 0; i < amount; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << endl;
-}
-
-void ArrayViceVersa()
-{
-	const int amount = 10;
-	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-	for (int i = 0; i < amount; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	cout << endl;
-
-	for (int i = amount - 1; i >= 0; i--)
-	{
-		cout << arr[i] << " ";
-	}
+    while (amount <= n)
+    {
+        for (int j = 0; j < times; j++)
+        {
+            if (arr[j] == amount)
+            {
+                count++;
+            }
+        }
+        cout << amount << "-" << count << endl;
+        count = 0;
+        amount++;
+    }
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
