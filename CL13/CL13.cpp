@@ -1,42 +1,42 @@
-﻿// HW12.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// CL13.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include <ctime>
+#include <vector>
+#include "CL13.h"
 
 using namespace std;
 
 int main()
 {
-    srand(time(NULL));
-    const int sizeOfArr = 10;
-    int arr[sizeOfArr];
-    int n;
-    cin >> n;
-
-    for (int i = 0; i < sizeOfArr; i++)
+    vector<int> vector = { 1, 2, 3, 4, 10 }; 
+    vector.erase(vector.begin() + 2);
+    vector.insert(vector.begin() + 2, 9);
+    for (int i = 0; i < vector.size(); i++)
     {
-        arr[i] = rand() % (n + 1);
-        cout << arr[i] << " ";
+
     }
-    cout << endl << endl;
+}
 
-    int currentNum = 0, count = 0;
-    while (currentNum <= n)
+void Task1()
+{
+    const int a = 3, b = 4;
+    int arr1[a] = { 1, 2, 3 };
+    int arr2[b] = { 4, 5, 6, 7 };
+
+    int arr3[a + b];
+    for (int i = 0; i < a; i++)
     {
-        for (int j = 0; j < sizeOfArr; j++)
-        {
-            if (arr[j] == currentNum)
-            {
-                count++;
-            }
-        }
-        if (count > 0)
-        {
-            cout << currentNum << "-" << count << endl;
-        }
-        count = 0;
-        currentNum++;
+        arr3[i] = arr1[i];
+    }
+    for (int i = 0; i < b; i++)
+    {
+        arr3[a + i] = arr2[i];
+    }
+
+    for (int i = 0; i < a + b; i++)
+    {
+        cout << arr3[i] << " ";
     }
 }
 
