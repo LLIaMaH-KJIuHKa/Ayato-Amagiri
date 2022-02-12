@@ -1,40 +1,76 @@
-﻿// CL13.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// CL14.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
 #include <vector>
-#include "CL13.h"
+#include "CL14.h"
 
 using namespace std;
 
 int main()
 {
-    vector<int> vector = { 1, 2, 3, 4, 10 }; 
-    vector.erase(vector.begin() + 2);
-    vector.insert(vector.begin() + 2, 9);
-
+	int t;
+	cin >> t;
+	for (int i = 0; i < t; i++)
+	{
+		vector<int> v;
+		int n;
+		cin >> n;
+		for (int i = 0; i < n; i++)
+		{
+			int a;
+			cin >> a;
+			v.push_back(a);
+		}
+		
+		for (int i = 0; i < v.size(); i++)
+		{
+			bool b = true;
+			if (i % 2 != v[i] % 2)
+			{
+				b = false;
+			}
+		}
+	}
 }
 
-void Task1()
+void First()
 {
-    const int a = 3, b = 4;
-    int arr1[a] = { 1, 2, 3 };
-    int arr2[b] = { 4, 5, 6, 7 };
+	vector<int> v;
+	while (true)
+	{
+		int a;
+		cin >> a;
+		if (a == 0)
+		{
+			break;
+		}
+		v.push_back(a);
+	}
+	cout << endl;
 
-    int arr3[a + b];
-    for (int i = 0; i < a; i++)
-    {
-        arr3[i] = arr1[i];
-    }
-    for (int i = 0; i < b; i++)
-    {
-        arr3[a + i] = arr2[i];
-    }
+	for (int i = 0; i < v.size(); i++)
+	{
+		cout << v[i] << " ";
+	}
+	cout << endl;
 
-    for (int i = 0; i < a + b; i++)
-    {
-        cout << arr3[i] << " ";
-    }
+	for (int i = 0; i < v.size(); i++)
+	{
+		bool repeats = false;
+		for (int j = 0; j < i; j++)
+		{
+			if (v[i] == v[j])
+			{
+				repeats = true;
+				break;
+			}
+		}
+		if (repeats == false)
+		{
+			cout << v[i] << " ";
+		}
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
