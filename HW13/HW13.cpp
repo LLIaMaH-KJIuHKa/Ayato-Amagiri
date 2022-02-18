@@ -1,81 +1,96 @@
-﻿// CL14.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// HW13.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
 #include <vector>
-#include "CL14.h"
+#include <string>
+#include "HW13.h"
 
 using namespace std;
 
 int main()
 {
-	First();
+	TwoBrackets();
 }
 
-void Second()
+void TwoBrackets()
 {
 	int t;
 	cin >> t;
+	cout << endl;
 	for (int i = 0; i < t; i++)
 	{
-		vector<int> v;
-		int n;
-		cin >> n;
-		for (int i = 0; i < n; i++)
+		string s;
+		getline(cin, s);
+		int result = 0;
+		if (s.find_first_of('(') < s.find_first_of(')'))
 		{
-			int a;
-			cin >> a;
-			v.push_back(a);
+			result++;
 		}
-
-		for (int i = 0; i < v.size(); i++)
+		if (s.find_first_of('[') < s.find_first_of(']'))
 		{
-			bool b = true;
-			if (i % 2 != v[i] % 2)
-			{
-				b = false;
-			}
+			result++;
 		}
+		cout << result << endl;
 	}
 }
 
-void First()
+void DimaAndSergey()
 {
-	vector<int> v;
-	while (true)
+	vector<int> cards;
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
 	{
-		int a;
-		cin >> a;
-		if (a == 0)
-		{
-			break;
-		}
-		v.push_back(a);
+		int card;
+		cin >> card;
+		cards.push_back(card);
 	}
-	cout << endl;
 
-	for (int i = 0; i < v.size(); i++)
+	int sergey = 0;
+	int dima = 0;
+	bool player = true;
+	while (n >= 0)
 	{
-		cout << v[i] << " ";
-	}
-	cout << endl;
-
-	for (int i = 0; i < v.size(); i++)
-	{
-		bool repeats = false;
-		for (int j = 0; j < i; j++)
+		int currentMax = 0;
+		for (int i = 0; i < n; i++)
 		{
-			if (v[i] == v[j])
+			if (cards[i] > currentMax)
 			{
-				repeats = true;
+				currentMax = cards[i];
+			}
+		}
+		for (int i = 0; i < n; i++)
+		{
+			if (cards[i] == currentMax)
+			{
+				if (player)
+				{
+					sergey += currentMax;
+				}
+				else
+				{
+					dima += currentMax;
+				}
+				currentMax = 0;
+				cards.erase(cards.begin() + i);
 				break;
 			}
 		}
-		if (repeats == false)
+		n--;
+		if (player)
 		{
-			cout << v[i] << " ";
+			player = false;
+			continue;
+		}
+		else
+		{
+			player = true;
+			continue;
 		}
 	}
+
+	cout << sergey << " " << dima;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
