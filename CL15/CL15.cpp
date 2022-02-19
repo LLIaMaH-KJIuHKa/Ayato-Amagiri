@@ -1,10 +1,9 @@
-﻿// HW13.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// CL15.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
 #include <vector>
-#include <string>
-#include "HW13.h"
+#include "CL15.h"
 
 using namespace std;
 
@@ -13,93 +12,20 @@ int main()
 
 }
 
-void TwoBrackets()
+void BuyShovel()
 {
-	int t;
-	cin >> t;
-	cout << endl;
-	for (int i = 0; i < t; i++)
+	int k, r, shovels = 1;
+	cin >> k >> r;
+	while (true)
 	{
-		string s;
-		cin >> s;
-		int result = 0;
-		if (s.find_first_of('(') < s.find_first_of(')'))
-		{
-			result++;
-			s.erase(s.find_first_of('('));
-			s.erase(s.find_first_of(')'));
-		}
-		if (s.find_first_of('[') < s.find_first_of(']'))
-		{
-			result++;
-			s.erase(s.find_first_of('['));
-			s.erase(s.find_first_of(']'));
-		}
-		cout << result << endl;
-		if (s.size() == 1)
+		if (k * shovels % 10 == 0 || k * shovels % 10 - r == 0)
 		{
 			break;
 		}
+
+		shovels++;
 	}
-}
-
-void DimaAndSergey()
-{
-	vector<int> cards;
-	int n;
-	cin >> n;
-	for (int i = 0; i < n; i++)
-	{
-		int card;
-		cin >> card;
-		cards.push_back(card);
-	}
-
-	int sergey = 0;
-	int dima = 0;
-	bool player = true;
-	while (n >= 0)
-	{
-		int currentMax = 0;
-		for (int i = 0; i < n; i++)
-		{
-			if (cards[i] > currentMax && i == 0 || cards[i] > currentMax && i == n - 1)
-			{
-				currentMax = cards[i];
-			}
-		}
-
-
-		for (int i = 0; i < n; i++)
-		{
-			if (cards[i] == currentMax)
-			{
-				if (player)
-				{
-					sergey += currentMax;
-				}
-				else
-				{
-					dima += currentMax;
-				}
-				currentMax = 0;
-				cards.erase(cards.begin() + i);
-				break;
-			}
-		}
-		n--;
-		if (player)
-		{
-			player = false;
-			continue;
-		}
-		else
-		{
-			player = true;
-			continue;
-		}
-	}
-	cout << sergey << " " << dima;
+	cout << shovels;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
